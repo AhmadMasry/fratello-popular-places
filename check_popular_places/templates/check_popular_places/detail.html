@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<form action="{% url 'detail' %}" method="post">
+    {% csrf_token %}
+    Place ID: <input type="text" name="place_id"><br>
+    <input type="submit" value="Check Popularity"/>
+</form>
+
+{% if name %}<p><strong>Place Name: </strong>{{ name }}</p>{% endif %}
+{% if address %}<p><strong>Address: </strong>{{ address }}</p>{% endif %}
+{% if types %}
+<p><strong>Types:</strong></p>
+{% for type in types %}
+<li>{{ type }}</li>
+{% endfor %}
+{% endif %}
+{% if coordinates %}
+<p><strong>Coordinates: </strong></p>
+<li>Latitude: {{ coordinates.lat }}</li>
+<li>Longitude: {{ coordinates.lng }}</li>
+{% endif %}
+{% if rating %}<p><strong>Rating: </strong>{{ rating }}</p>{% endif %}
+{% if current_popularity %}
+<p><strong>Current Popularity: </strong>{{ current_popularity }}</p>
+{% else %}
+<p><strong>There is no Current Popularity Information for this Place ID</strong></p>
+{% endif %}
+{% if time_spent %}<p><strong>{{ time_spent.1 }}</strong></p>{% endif %}
+{% if populartimes %}{{ populartimes }}{% endif %}
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+</body>
+</html>
