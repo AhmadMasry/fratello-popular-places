@@ -8,7 +8,7 @@
 
 <form action="{% url 'detail' %}" method="post">
     {% csrf_token %}
-    Place ID: <input type="text" name="place_id"><br>
+    Place ID: <input type="text" name="place_id" value="{{ id }}">
     <input type="submit" value="Check Popularity"/>
 </form>
 
@@ -28,7 +28,7 @@
 {% if rating %}<p><strong>Rating: </strong>{{ rating }}</p>{% endif %}
 {% if current_popularity %}
 <p><strong>Current Popularity: </strong>{{ current_popularity }}</p>
-{% else %}
+{% elif id %}
 <p><strong>There is no Current Popularity Information for this Place ID</strong></p>
 {% endif %}
 {% if time_spent %}<p><strong>{{ time_spent.1 }}</strong></p>{% endif %}
