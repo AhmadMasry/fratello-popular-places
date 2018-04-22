@@ -15,21 +15,24 @@
 {% if name %}<p><strong>Place Name: </strong>{{ name }}</p>{% endif %}
 {% if address %}<p><strong>Address: </strong>{{ address }}</p>{% endif %}
 {% if types %}
-<p><strong>Types:</strong></p>
-{% for type in types %}
-<li>{{ type }}</li>
-{% endfor %}
+    <p><strong>Types:</strong></p>
+    {% for type in types %}
+        <li>{{ type }}</li>
+    {% endfor %}
 {% endif %}
 {% if coordinates %}
-<p><strong>Coordinates: </strong></p>
-<li>Latitude: {{ coordinates.lat }}</li>
-<li>Longitude: {{ coordinates.lng }}</li>
+    <p><strong>Coordinates: </strong></p>
+    <li>Latitude: {{ coordinates.lat }}</li>
+    <li>Longitude: {{ coordinates.lng }}</li>
 {% endif %}
 {% if rating %}<p><strong>Rating: </strong>{{ rating }}</p>{% endif %}
 {% if current_popularity %}
-<p><strong>Current Popularity: </strong>{{ current_popularity }}</p>
+    <p><strong>Current Popularity: </strong>{{ current_popularity }} {% if current_popularity > 1 %} Visitors
+    {% else %} Visitor {% endif %}</p>
+    {% if usual_popularity %} Usually on {{ week_day }} the popularity is {{ usual_popularity }}  {% if usual_popularity > 1 %} Visitors
+    {% else %} Visitor {% endif %} {% endif %}</p>
 {% elif id %}
-<p><strong>There is no Current Popularity Information for this Place ID</strong></p>
+    <p><strong>There is no Current Popularity Information for this Place ID</strong></p>
 {% endif %}
 {% if time_spent %}<p><strong>{{ time_spent.1 }}</strong></p>{% endif %}
 {% if populartimes %}{{ populartimes }}{% endif %}

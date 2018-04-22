@@ -74,15 +74,15 @@ WSGI_APPLICATION = 'popular_places.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'fratello_popular_places',
-        'USER': 'root',
-        'PASSWORD': 'Test@123',
-        'HOST': 'localhost'
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'fratello_popular_places',
+#         'USER': 'root',
+#         'PASSWORD': 'Test@123',
+#         'HOST': 'localhost'
+#     }
+# }
 
 
 # Password validation
