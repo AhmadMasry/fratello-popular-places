@@ -30,6 +30,8 @@ def detail(request):
             return render(request, 'check_popular_places/detail.html', {
                 'error_message': e.message + " Please Enter a Place ID.",
             })
+        except KeyError as e:
+            return render(request, 'check_popular_places/detail.html', place_detail)
 
     else:
         return render(request, 'check_popular_places/detail.html', {
